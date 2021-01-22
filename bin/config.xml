@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="hardisk" class="com.laptop.app.Toshiba"></bean>
+    <bean id="hardisk" class="com.laptop.app.Samsung"></bean>
     <bean id="ram" class="com.laptop.app.Patriot"></bean>
-    <bean id="cpu" class="com.laptop.app.Intel"></bean>
+    <bean id="cpu" class="com.laptop.app.Amd"></bean>
 </beans>
