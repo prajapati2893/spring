@@ -26,7 +26,9 @@ public class Laptop {
 		own.displayOwnerInfo();
 		Seller seller=app.getBean("seller", Seller.class);
 		System.out.print("\n\nSeller Details:");
-		seller.displayOwnerInfo();
+		seller.displaySellerInfo();
+		receipt rec=app.getBean("receipt", receipt.class);
+		rec.showCertificate();
 	}
 
 }

@@ -1,17 +1,22 @@
 package com.other.info;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 public class Seller {
 	private String sellerName;
-	private Address address;
+	@Autowired
+	@Qualifier("sellerAddress")
+	private Address sellerAddress;
 	
 	public void setSellerName(String sellerName) {
 		this.sellerName = sellerName;
 	}
 	public void setAddress(Address address) {
-		this.address = address;
+		this.sellerAddress = address;
 	}
-	public void displayOwnerInfo() {
+	public void displaySellerInfo() {
 		System.out.print("\nName => "+sellerName);
-		System.out.print("\nAddress => "+address.getAddress());
+		System.out.print("\nAddress => "+sellerAddress.getAddress());
 	}
 }
