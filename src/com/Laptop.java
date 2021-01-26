@@ -1,7 +1,11 @@
-package com.laptop.app;
-
+package com;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.laptop.app.Cpu;
+import com.laptop.app.Hardisk;
+import com.laptop.app.Ram;
+import com.other.info.Owner;
+import com.other.info.Seller;
 
 public class Laptop {
 
@@ -12,17 +16,17 @@ public class Laptop {
 		Cpu cpu = app.getBean("cpu", Cpu.class);
 		System.out.println("Laptop Specs:");
 		System.out.print("Ram =>");
-		ram.name();
-		ram.capacity();
-		ram.type();
+		ram.RamInfo();
 		System.out.print("\nCPU =>");
-		cpu.name();
-		cpu.generation();
+		cpu.CpuInfo();
 		System.out.print("\nHardisk =>");
-		hdd.name();
-		hdd.storage();
-		hdd.type();
-
+		hdd.HardiskInfo();
+		Owner own=app.getBean("owner", Owner.class);
+		System.out.print("\n\nOwner Details:");
+		own.displayOwnerInfo();
+		Seller seller=app.getBean("seller", Seller.class);
+		System.out.print("\n\nSeller Details:");
+		seller.displayOwnerInfo();
 	}
 
 }
