@@ -8,28 +8,27 @@
     <bean id="ram" class="com.laptop.app.Patriot"></bean>
     <bean id="cpu" class="com.laptop.app.Amd"></bean>
     
-    <bean id="owner" class="com.other.info.Owner">
-    	<property name="ownerName" value="Sushant Prajapati"></property>
-    	<property name="address">
-    	<bean class="com.other.info.Address">
+    <bean id="ownerAddress" class="com.other.info.Address">
     		<constructor-arg name="houseName" value="104/92 East Lok Pur"></constructor-arg>
     		<constructor-arg name="town" value="Naini"></constructor-arg>
     		<constructor-arg name="district" value="Prayagraj"></constructor-arg>
     		<constructor-arg name="state" value="UP"></constructor-arg>
-    	</bean>
-    	</property>
     </bean>
-
+    <bean id="sellerAddress" class="com.other.info.Address">
+    		<constructor-arg name="houseName" value="Indira Bhavan" />
+    		<constructor-arg name="town" value="Civil Lines" />
+    		<constructor-arg name="district" value="Prayagraj" />
+    		<constructor-arg name="state" value="UP" />
+    </bean>
+    	
+    
+    <bean id="owner" class="com.other.info.Owner">
+    	<property name="ownerName" value="Sushant Prajapati" />
+    	<property name="address" ref="ownerAddress" />
+    </bean>
     <bean id="seller" class="com.other.info.Seller">
-    	<property name="sellerName" value="Abhilash Pathak"></property>
-    	<property name="address">
-    	<bean class="com.other.info.Address">
-    		<constructor-arg name="houseName" value="Indira Bhavan"></constructor-arg>
-    		<constructor-arg name="town" value="Civil Lines"></constructor-arg>
-    		<constructor-arg name="district" value="Prayagraj"></constructor-arg>
-    		<constructor-arg name="state" value="UP"></constructor-arg>
-    	</bean>
-    	</property>
+    	<property name="sellerName" value="Abhilash Pathak" />
+    	<property name="address" ref="sellerAddress" />
     </bean>
     
     
