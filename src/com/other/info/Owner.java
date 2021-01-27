@@ -2,8 +2,10 @@ package com.other.info;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 
 public class Owner {
+	@Value("${owner.name}")
 	private String ownerName;
 	@Autowired
 	@Qualifier("ownerAddress")
